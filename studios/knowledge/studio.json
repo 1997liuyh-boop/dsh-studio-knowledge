@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "knowledge",
+  "name": "AI学习路线",
+  "icon": "🧠",
+  "description": "参考 AI Roadmap 的八条真实路线、119 个节点及本机学习进度",
+  "order": 11,
+  "entry": "/studio-projects/knowledge",
+  "capabilities": [],
+  "compatibility": {
+    "host": "0.2.1-rc.2",
+    "runtime": "^0.5.0",
+    "worktable": "^0.6.0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "name": "dsh-studio-knowledge",
+  "version": "0.1.0",
+  "kind": "studio",
+  "packages": [
+    {
+      "id": "knowledge",
+      "path": "studios/knowledge"
+    }
+  ]
+}
