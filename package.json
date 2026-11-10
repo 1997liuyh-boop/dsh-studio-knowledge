@@ -1,6 +1,6 @@
 {
   "name": "dsh-studio-knowledge",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "用户自定义学习路线、原创示例及本机学习进度",
   "type": "module",
   "license": "MIT",

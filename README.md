@@ -1,30 +1,37 @@
-# 自定义学习路线工作室
+# dsh-studio-knowledge
 
-独立的 DSH 工作室插件，用来维护学习路线、阶段节点、学习进度和笔记。它只提供本工作室页面，工作室容器与共享运行时需要另行安装。
+[简体中文](README.zh.md)
 
-## 功能
+## Repository
 
-- 内置一条原创“我的学习计划”示例，包含 6 个阶段节点。
-- 支持按阶段查看主题、完成状态和学习笔记。
-- 支持进度与笔记 JSON 导入、导出，便于备份和迁移。
-- 支持在源码中添加多条自定义路线，每条路线有唯一 id、标题、描述、资源链接和阶段 topics。
-- 进度按路线 id、阶段序号和节点标题保存，修改路线前可先导出备份。
-- 页面通过共享会话运行，不会读取其他工作室的会话或项目目录。
+- Repository name: `dsh-studio-knowledge`
+- Repository description: Personal learning-roadmap studio with staged topics, progress, notes and a local knowledge graph.
+- Source: `https://github.com/1997liuyh-boop/dsh-studio-knowledge`
 
-## 安装与构建
+## Features
 
-先安装 [工作室容器与共享运行时](https://github.com/1997liuyh-boop/dsh-studio-library)，再通过 dsh 插件管理器添加本仓库 Git URL。Git 安装使用仓库中已提交的 `lib/` 与 `static/`。
+- Start from the included six-stage “My learning plan” example.
+- Browse topics, completion state and notes by stage, with a graph view for links between nodes.
+- Import and export progress and notes as JSON; route definitions are not silently imported.
+- Add source-controlled roadmaps with unique IDs, descriptions, resource links and topic lists.
+- Keep progress keyed by roadmap, stage and node, isolated from other studios and projects.
 
-需要 Node.js 22 及 npm。运行 `npm install --include=dev --legacy-peer-deps`、`npm run build`、`npm run check`。构建不依赖相邻工作室。
+## Installation
 
-## 配置路线
+Install the control bundle, then this exact studio tag through the official Desktop plugin manager after fully quitting Desktop:
 
-编辑 `studios/knowledge/src/roadmaps.ts` 中的 `roadmaps` 数组，然后重新构建。公开包不包含外站路线内容；导入进度只导入状态和笔记，不会偷偷导入路线或网络资源。请确认自行添加的路线和链接具有使用权限。
+```powershell
+& "<Desktop install directory>\resources\runtime\cli\bin\dsh.cmd" plugin --profile desktop add "github:1997liuyh-boop/dsh-studio-library#v0.1.3"
+& "<Desktop install directory>\resources\runtime\cli\bin\dsh.cmd" plugin --profile desktop add "github:1997liuyh-boop/dsh-studio-knowledge#v0.2.1"
+& "<Desktop install directory>\resources\runtime\cli\bin\dsh.cmd" plugin --profile desktop list
+```
 
-## 数据与限制
+Verify `main: lib/index.js`, `exports./client: lib/client.js`, `dsh.bundle.patch: ./cordis.patch.yml` and the built `static` entry. Restart Desktop and open “Knowledge studio”.
 
-进度和笔记保存在当前 DSH 工作室目录，卸载插件不会主动删除数据。清理浏览器或 DSH 数据目录前请导出 JSON。MIT 仅覆盖本项目代码和原创示例，不替外部路线内容授予许可；来源记录见 `UPSTREAM.json`。
+## Requirements and limits
 
-## 更新已安装插件
+Source builds require Node.js 22 and npm. Add roadmaps in `studios/knowledge/src/roadmaps.ts` and rebuild. Progress and notes are local; export JSON before clearing DSH data. External links and roadmap content must be used with permission.
 
-GitHub 代码提交不会自动更新 Desktop profile 中已经锁定的安装版本。请通过插件管理器重新安装本仓库来源；旧共享组合库的用户请先按[控制层迁移步骤](https://github.com/1997liuyh-boop/dsh-studio-library#更新与旧组合库迁移)保留现有子工作室，再移除旧组合库。工作室内升级需要已发布的适配安装包。
+## License and sources
+
+MIT licensed. The license covers this project and its original example; external roadmap content keeps its own rights. See `UPSTREAM.json`.
