@@ -1,0 +1,14 @@
+{
+  "name": "dsh-studio-knowledge",
+  "version": "0.2.0",
+  "description": "用户自定义学习路线、原创示例及本机学习进度",
+  "entry": {
+    "name": "dsh-studio-knowledge",
+    "inject": [
+      "studioProjects"
+    ]
+  },
+  "client": {
+    "platform": "web"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "dsh-studio-knowledge",
   "version": "0.2.0",
-  "description": "参考 AI Roadmap 的八条真实路线、119 个节点及本机学习进度",
+  "description": "用户自定义学习路线、原创示例及本机学习进度",
   "entry": {
     "name": "dsh-studio-knowledge",
     "inject": [

@@ -1,11 +1,12 @@
 {
   "name": "dsh-studio-knowledge",
   "version": "0.2.0",
-  "description": "参考 AI Roadmap 的八条真实路线、119 个节点及本机学习进度",
+  "description": "用户自定义学习路线、原创示例及本机学习进度",
   "type": "module",
   "license": "MIT",
   "engines": {
-    "node": ">=22"
+    "node": ">=22",
+    "dsh": "0.2.1-rc.2 || >=0.2.2-rc.1 <0.2.2"
   },
   "main": "lib/index.js",
   "exports": {
@@ -26,7 +27,8 @@
     "studio.json",
     "sources.json",
     "UPSTREAM.json",
-    "THIRD_PARTY_NOTICES.md"
+    "THIRD_PARTY_NOTICES.md",
+    "scripts/start.ps1"
   ],
   "dsh": {
     "bundle": {
@@ -58,7 +60,8 @@
     }
   },
   "scripts": {
-    "build": "node ../../scripts/build.mjs knowledge"
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check-install.mjs"
   },
   "repository": {
     "type": "git",
@@ -68,5 +71,19 @@
   "homepage": "https://github.com/1997liuyh-boop/dsh-studio-knowledge#readme",
   "bugs": {
     "url": "https://github.com/1997liuyh-boop/dsh-studio-knowledge/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "studio"
+  ],
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "esbuild": "^0.28.2",
+    "postcss": "8.5.15",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "tailwindcss": "4.3.0",
+    "typescript": "6.0.3"
   }
 }
